@@ -13,7 +13,7 @@ const Projects = ({url}) => {
     useEffect( () => getProjectData(), [])
 
     const loaded = () => {
-        projects.map( projects => 
+        return projects.map( project => 
             <div>
                 <h1>{project.name}</h1>
                 <img src={project.image} />
