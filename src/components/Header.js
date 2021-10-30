@@ -1,29 +1,21 @@
 import { Link } from "react-router-dom";
 
-const Header = props => {
-
-    const navStyle = {
-        display: "flex",
-        justifyContent: "space-around",
-        border: "3px solid black",
-        padding: "8px",
-        width: "90%",
-        margin: "auto",
-      }; 
+const Header = () => {
 
     return (
         <header>
-            <h1>My Portfolio Page</h1>
-            <nav style={navStyle}>
+            <nav className='nav-container'>
                 <Link to="/">
-                    <div>Home</div>
+                    <h1 className='nav-title'>Blake's Portfolio</h1>
                 </Link>
-                <Link to="/about">
-                    <div>About</div>
-                </Link>
-                <Link to="/projects">
-                    <div>Projects</div>
-                </Link>
+                <div className="nav-links">
+                    <Link to="/about" className="nav-text">
+                        About
+                    </Link>
+                    <Link to="/projects" className="nav-text">
+                        Projects
+                    </Link>
+                </div>
             </nav>
         </header>
     )
