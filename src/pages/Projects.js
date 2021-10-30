@@ -13,13 +13,13 @@ const Projects = ({url}) => {
         }
 
         getProjectData()
-    }, [])
+    }, [url])
 
     const loaded = () => {
         return projects.map( project => 
             <div>
                 <h1>{project.name}</h1>
-                <img src={project.image} />
+                <img src={project.image} alt={project.image}/>
                 <a href={project.git}>
                     <button>GitHub</button>
                 </a>

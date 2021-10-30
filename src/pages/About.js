@@ -11,10 +11,10 @@ const About = ({url}) => {
             const data = await response.json()
             setAbout(data)
         }
-        
+
         getAboutData()
     
-    }, [])
+    }, [url])
 
     const loaded = () => {
         return (
