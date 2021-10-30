@@ -5,8 +5,6 @@ const About = ({url}) => {
     const [about, setAbout] = useState(null)
     const [imageLoaded, setImageLoaded] = useState(false)
 
-
-
     useEffect( () => {
         
         const getAboutData = async () => {
@@ -19,20 +17,22 @@ const About = ({url}) => {
     
     }, [url])
 
-    const loaded = () => {
-        return (
-            <div className="about-container" style={imageLoaded ? {} : {display: 'none'}}>
-                <img className="about-headshot" src={about.headshot} alt="" onLoad={() => setImageLoaded(true)} />
-                <div className="about-details">
-                    <h2 className="about-title">{about.name}</h2>
-                    <h5 className='about-email'>{about.email}</h5>
-                    <p>{about.bio}</p>
-                </div>
+    return (
+        <>
+        {
+        about &&
+        <div className="about-container" style={imageLoaded ? {} : {display: 'none'}}>
+            <img className="about-headshot" src={about.headshot} alt="" onLoad={() => setImageLoaded(true)} />
+            <div className="about-details">
+                <h2 className="about-title">{about.name}</h2>
+                <h5 className='about-email'>{about.email}</h5>
+                <p>{about.bio}</p>
             </div>
-        )
-    }
-
-    return about ? loaded() : <h1>Loading</h1>
+        </div>
+        }
+        <h1 style={imageLoaded ? {display: 'none'} : {}}>Loading...</h1>
+        </>
+    )
 }
 
 export default About
