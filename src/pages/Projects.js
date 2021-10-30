@@ -19,8 +19,8 @@ const Projects = ({url}) => {
     const loaded = () => {
         return (
             <div className="projects">
-                {projects.map( project => 
-                    <Project project={project} />
+                {projects.map( (project, index) => 
+                    <Project project={project} key={index}/>
                 )}
             </div>
         )
