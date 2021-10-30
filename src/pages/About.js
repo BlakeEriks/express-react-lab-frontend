@@ -4,13 +4,17 @@ const About = ({url}) => {
 
     const [about, setAbout] = useState(null)
 
-    const getAboutData = async () => {
-        const response = await fetch(url + 'about')
-        const data = await response.json()
-        setAbout(data)
-    }
-
-    useEffect( () => getAboutData(), [])
+    useEffect( () => {
+        
+        const getAboutData = async () => {
+            const response = await fetch(url + 'about')
+            const data = await response.json()
+            setAbout(data)
+        }
+        
+        getAboutData()
+    
+    }, [])
 
     const loaded = () => {
         return (
