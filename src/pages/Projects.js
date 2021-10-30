@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import Project from "../components/Project"
 
 const Projects = ({url}) => {
 
@@ -16,17 +17,12 @@ const Projects = ({url}) => {
     }, [url])
 
     const loaded = () => {
-        return projects.map( project => 
-            <div>
-                <h1>{project.name}</h1>
-                <img src={project.image} alt={project.image}/>
-                <a href={project.git}>
-                    <button>GitHub</button>
-                </a>
-                <a href={project.live}>
-                    <button>Live Site</button>
-                </a>
-            </div>    
+        return (
+            <div className="projects">
+                {projects.map( project => 
+                    <Project project={project} />
+                )}
+            </div>
         )
     }
 
