@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Lekton&family=Saira+Semi+Condensed:wght@300&display=swap');
+
 .App {
   text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .projects {
@@ -101,8 +104,11 @@ a {
 }
 
 .nav-title {
+  font-family: 'Lekton', sans-serif;
+  font-size: 40px;
   color: black;
   padding: 0 30px;
+  margin: 0;
 }
 
 .nav-text {
