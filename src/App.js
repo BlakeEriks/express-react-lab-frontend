@@ -1,35 +1,32 @@
 import './App.css';
-import {VerticleFlexBox, HorizontalFlexBox} from "./Styles/Containers"
+
+import Header from './components/Header';
+import Footer from './components/Footer';
+import {Route, Switch} from 'react-router-dom'
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import About from './pages/About';
 
 function App() {
+
+  const URL = 'https://blakeeriks-express-react-lab.herokuapp.com/'
+
   return (
-    <>
-      <VerticleFlexBox>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-      </VerticleFlexBox>
-      <VerticleFlexBox alignLeft>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-      </VerticleFlexBox>
-      <VerticleFlexBox alignRight>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-      </VerticleFlexBox>
-      <HorizontalFlexBox alignRight>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-      </HorizontalFlexBox>
-      <HorizontalFlexBox alignLeft>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-      </HorizontalFlexBox>
-    </>
+    <div className="App">
+      <Header />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/projects">
+          <Projects url={URL}/>
+        </Route>
+        <Route path="/about">
+          <About url={URL}/>
+        </Route>
+      </Switch>
+      <Footer />
+    </div>
   );
 }
 
